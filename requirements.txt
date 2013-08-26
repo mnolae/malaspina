@@ -1,5 +1,6 @@
 Django==1.5.2
 Mezzanine==1.4.10
+PIL==1.1.7
 Pillow==2.1.0
 bleach==1.2.2
 filebrowser-safe==0.2.28

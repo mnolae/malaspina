@@ -17,6 +17,9 @@ urlpatterns = patterns("",
     # admin interface, which would be marginally more secure.
     ("^admin/", include(admin.site.urls)),
 
+    # Cargar template con lista de galerias
+    url(r'^gallery/$', direct_to_template, {"template": "pages/list_gallery.html"}, name="listgallery"),
+
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
