@@ -1833,6 +1833,9 @@ input.search-query {
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
           border-radius: 15px;
+          
+  /* Añadido para Malaspina */
+  width: 150px;
 }
 
 /* Allow for input prepend/append in search forms */
