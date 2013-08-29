@@ -25,7 +25,7 @@ body:after {
   text-align: center;
   line-height: 0;
   font-weight: normal;
-  top: 5% !important;
+  /*top: 5% !important; */
 }
 /* line 28, ../sass/lightbox.sass */
 .lightbox .lb-image {
