@@ -30,15 +30,22 @@
 {% with page.gallery.images.all as images %}
 {% for image in images %}
 <li>
+	<a class="thumbnail" title="{{ image.description }}" href="{{ MEDIA_URL }}{{ image.file }}" data-lightbox="set-{{ page.gallery.id }}">
+		<img src="{{ MEDIA_URL }}{% thumbnail image.file 75 75 %}">
+	</a>
+	<!-- Editado malaspina
     <a class="thumbnail" rel="#image-{{ image.id }}" title="{{ image.description }}" href="{{ MEDIA_URL }}{{ image.file }}">
         <img class="image-overlay-thumb" src="{{ MEDIA_URL }}{% thumbnail image.file 75 75 %}">
     </a>
+   -->
+    <!--
     <div id="image-{{ image.id }}" class="image-overlay" style="display:none;">
-        <a href="#" class="image-overlay-prev">&larr;</a>
-        <a href="#" class="image-overlay-next">&rarr;</a>
-        <img class="image-overlay-full" src="{{ MEDIA_URL }}{% thumbnail image.file 0 600 %}"><br>
+        <a href="#" class="image-overlay-prev">‹</a>
+        <a href="#" class="image-overlay-next">›</a>
+        <img class="image-overlay-full" src="{{ MEDIA_URL }}{% thumbnail image.file 0 0 %}"><br>
         <p>{{ image.description }}<br>{{ forloop.counter }} / {{ images|length }}</p>
     </div>
+   -->
 </li>
 {% endfor %}
 {% endwith %}

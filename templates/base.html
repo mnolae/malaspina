@@ -18,6 +18,8 @@
 {% compress css %}
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
 <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+<link rel="stylesheet" href="{% static "css/lightbox.css" %}">
+<!-- link rel="stylesheet" href="{% static "css/screen.css" %}" -->
 <link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}">
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/rtl.css" %}">
@@ -35,6 +37,8 @@
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
+<script src="{% static "js/lightbox-2.6.min.js" %}"></script>
+
 {% block extra_js %}{% endblock %}
 {% endcompress %}
 <!--[if lt IE 9]>
