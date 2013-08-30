@@ -29,7 +29,7 @@
 <ul class="thumbnails gallery">
 {% with page.gallery.images.all as images %}
 {% for image in images %}
-<li>
+<li> <!-- Para el tooltip:  data-toggle="tooltip" data-placement="bottom" -->
 	<a class="thumbnail" title="{{ image.description }}" href="{{ MEDIA_URL }}{{ image.file }}" data-lightbox="set-{{ page.gallery.id }}">
 		<img src="{{ MEDIA_URL }}{% thumbnail image.file 75 75 %}">
 	</a>

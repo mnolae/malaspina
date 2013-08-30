@@ -39,7 +39,7 @@
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
 <script src="{% static "js/lightbox-2.6.min.js" %}"></script>
 
-{% block extra_js %}{% endblock %}
+{% block extra_js %} {% endblock %}
 {% endcompress %}
 <!--[if lt IE 9]>
 <script src="{% static "js/html5shiv.js" %}"></script>
@@ -144,6 +144,11 @@
 </footer>
 
 {% include "includes/footer_scripts.html" %}
+
+<script>
+	// TODO: Repasar los tooltips y los nombres de las imágenes en panel modal de lightbox
+	//$("a").tooltip();
+</script> 
 
 </body>
 </html>
