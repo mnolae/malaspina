@@ -1082,7 +1082,7 @@
 
   , init: function (type, element, options) {
       var eventIn
-        , eventOut
+        , eventut
         , triggers
         , trigger
         , i
@@ -1100,9 +1100,9 @@
           this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
         } else if (trigger != 'manual') {
           eventIn = trigger == 'hover' ? 'mouseenter' : 'focus'
-          eventOut = trigger == 'hover' ? 'mouseleave' : 'blur'
+          eventut = trigger == 'hover' ? 'mouseleave' : 'blur'
           this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
-          this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
+          this.$element.on(eventut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
         }
       }
 

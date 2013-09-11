@@ -2,6 +2,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from mezzanine.conf import settings
+
 from mezzanine.core.views import direct_to_template
 
 
@@ -16,6 +18,9 @@ urlpatterns = patterns("",
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
     ("^admin/", include(admin.site.urls)),
+    
+    # APP DE EVENTS
+    url(r'^event/', include('mlsp_event.urls')),
 
     # Cargar template con lista de galerias
     url(r'^gallery/$', direct_to_template, {"template": "pages/list_gallery.html"}, name="listgallery"),

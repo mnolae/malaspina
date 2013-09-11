@@ -13,7 +13,7 @@
 # Controls the ordering and grouping of the admin menu.
 #
 ADMIN_MENU_ORDER = (
-    ("Content", ("pages.Page", "blog.BlogPost",
+    ("Content", ("pages.Page", "blog.BlogPost","mlsp_event.EventPost",
        "generic.ThreadedComment", ("Media Library", "fb_browse"),)),
     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
     ("Users", ("auth.User", "auth.Group",)),
@@ -243,6 +243,7 @@ INSTALLED_APPS = (
     #"mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+    'mlsp_event',
 )
 
 # List of processors used by RequestContext to populate the context.

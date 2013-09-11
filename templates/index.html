@@ -1,17 +1,26 @@
-{% extends "base.html" %}
-{% load i18n mezzanine_tags keyword_tags %}
+{% load mezzanine_tags i18n future staticfiles %}
 
-{% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title %}{% trans "Home" %}{% endblock %}
+{% compress css %}
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+{% endcompress %}
 
-{% block breadcrumb_menu %}
-<li class="active">{% trans "Home" %}</li>
-{% endblock %}
+{% compress js %}
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+
+{% block extra_js %} {% endblock %}
+{% endcompress %}
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<![endif]-->
 
 {% block main %}
 
+<div style="margin: 35px; padding: 5px; border: 1px solid #ccc; background-color: rgba(205,205,205,0.5);">
 {% editable page.richtextpage.content %}
 {{ page.richtextpage.content|richtext_filters|safe }}
 {% endeditable %}
+</div>
 
 {% endblock %}
+
+{% include "includes/footer_scripts.html" %}
