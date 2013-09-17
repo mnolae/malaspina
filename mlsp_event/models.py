@@ -13,11 +13,16 @@ class EventPost(Displayable, Ownable, RichText, AdminThumbMixin):
     A event post.
     """
 
+    dini = models.DateTimeField(_("Departure"), null=True, blank=True)
+    dfin = models.DateTimeField(_("Arrival"), null=True, blank=True)
+    map = models.CharField(_("Map"), max_length=500, null=True, blank=True)
+    price = models.IntegerField(_("Price"), null=True, blank=True)
+    
     categories = models.ManyToManyField("EventCategory",
                                         verbose_name=_("Categories"),
                                         blank=True, related_name="eventposts")
     allow_comments = models.BooleanField(verbose_name=_("Allow comments"),
-                                         default=True)
+                                         default=False)
     comments = CommentsField(verbose_name=_("Comments"))
     rating = RatingField(verbose_name=_("Rating"))
     featured_image = FileField(verbose_name=_("Featured Image"),
@@ -27,6 +32,11 @@ class EventPost(Displayable, Ownable, RichText, AdminThumbMixin):
                                  verbose_name=_("Related posts"), blank=True)
 
     admin_thumb_field = "featured_image"
+    
+    """
+    Fields for data's event.
+    """
+    
 
     class Meta:
         verbose_name = _("Event post")
