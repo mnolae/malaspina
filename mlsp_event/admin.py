@@ -10,16 +10,38 @@ from mezzanine.core.admin import DisplayableAdmin, OwnableAdmin
 
 
 eventpost_fieldsets = deepcopy(DisplayableAdmin.fieldsets)
+
+"""
+eventpost_fieldsets[0][1]["fields"].insert(1, ("dini", "dfin"))
+eventpost_fieldsets[0][1]["fields"].insert(2, ("content"))
 eventpost_fieldsets[0][1]["fields"].insert(1, "categories")
-eventpost_fieldsets[0][1]["fields"].extend(["content", "allow_comments"])
+eventpost_fieldsets[0][1]["fields"].extend(["allow_comments",])
+"""
+
+eventpost_fieldsets[0][1]["fields"].remove("title")
+eventpost_fieldsets[0][1]["fields"].remove("status")
+eventpost_fieldsets[0][1]["fields"].remove(("publish_date", "expiry_date"))
+
 eventpost_list_display = ["title", "user", "status", "admin_link"]
 if settings.EVENT_USE_FEATURED_IMAGE:
-    eventpost_fieldsets[0][1]["fields"].insert(-2, "featured_image")
+    # eventpost_fieldsets[0][1]["fields"].insert(-2, "featured_image")
     eventpost_list_display.insert(0, "admin_thumb")
+
 eventpost_fieldsets = list(eventpost_fieldsets)
-eventpost_fieldsets.insert(1, (_("Other posts"), {
+
+eventpost_fieldsets.insert(0, (_("Data travel"), {                                                  
+    "classes": ("collapse-opened",),
+    "fields": ("title", ("dini", "dfin"), "map", "price", "featured_image", "content", "categories")}))
+
+eventpost_fieldsets.insert(1, (_("Post data"), {                                                  
+    "classes": ("collapse-closed",),
+    "fields": ("status", ("publish_date", "expiry_date"), "allow_comments")}))
+
+eventpost_fieldsets.insert(2, (_("Other posts"), {
     "classes": ("collapse-closed",),
     "fields": ("related_posts",)}))
+
+
 eventpost_list_filter = deepcopy(DisplayableAdmin.list_filter) + ("categories",)
 
 

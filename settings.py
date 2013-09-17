@@ -74,6 +74,8 @@ DASHBOARD_TAGS = (
 #
 # BLOG_USE_FEATURED_IMAGE = True
 
+EVENT_USE_FEATURED_IMAGE = True
+
 # If True, the south application will be automatically added to the
 # INSTALLED_APPS setting.
 USE_SOUTH = True
@@ -243,7 +245,7 @@ INSTALLED_APPS = (
     #"mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
-    'mlsp_event',
+    "mlsp_event",
 )
 
 # List of processors used by RequestContext to populate the context.
